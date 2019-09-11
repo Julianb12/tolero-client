@@ -4,21 +4,21 @@ import '../Form/Form.css';
 
 
 
-class Form1 extends Component {
+class Form2 extends Component {
   render() {
     return (
       <div className="Form">
         {/* <Info sections={this.props.sections}/> */}
         <form onSubmit={this.props.handleSubmit}>
           <div>
-            <label htmlFor="users">
-              User Position
+            <label htmlFor="opps">
+              Opp Position
             </label>
             <input 
               type="text" 
-              name="usersField" 
-              id="users"
-              value={this.props.usersPos}
+              name="oppsField" 
+              id="opps"
+              value={this.props.oppsPos}
               />
          </div>
          <div>
@@ -28,7 +28,7 @@ class Form1 extends Component {
           </label>
           <input 
             type="text" 
-            name="userRating" 
+            name="oppRating" 
             id="rating"
           />
          </div>
@@ -39,4 +39,4 @@ class Form1 extends Component {
   }
 }
 
-export default Form1;
+export default Form2;

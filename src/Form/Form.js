@@ -16,22 +16,12 @@ class Form extends Component {
             </label>
             <input 
               type="text" 
-              name="textField" 
+              name="subjectField" 
               id="issue"
               value={this.props.subject}
               />
          </div>
-         <div>
-          <label 
-            htmlFor="rating">
-            rating
-          </label>
-          <input 
-            type="text" 
-            name="otherTextField" 
-            id="rating"
-          />
-         </div>
+
         <button>next</button>
         </form>
       </div>

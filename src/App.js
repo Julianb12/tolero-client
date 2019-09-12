@@ -18,7 +18,8 @@ class App extends Component {
     usersPos: '',
     usersRating: 0,
     oppPos: '',
-    oppRating: 0
+    oppRating: 0,
+    wholeString: ''
   };
  
   // forms = {0: Form, 1: Form1, 2: Form2}
@@ -33,7 +34,7 @@ class App extends Component {
     })
   }
   // setSub = () => {
-
+  
   // }
   handleSubmitSubject = (e) => {
     //textField is Name on input
@@ -51,7 +52,7 @@ class App extends Component {
     const inputRating = e.target.elements['userRating'].value;
     this.pageIterate();
     this.setState({usersPos: input})
-    this.setState({userRating: inputRating})
+    this.setState({usersRating: inputRating})
     console.log(input);
   }
 
@@ -60,11 +61,16 @@ class App extends Component {
     e.preventDefault()
     const input = e.target.elements['oppsField'].value;
     const inputRating = e.target.elements['oppRating'].value;
+    const combined = `◒ ${this.state.usersPos} ◟${this.state.usersRating}◞ 
+    ◓  <p>▲</p> ◑ ${this.state.oppPos} ◜${this.state.oppRating}◝ ◐ `
     this.pageIterate();
     this.setState({oppPos: input})
     this.setState({oppRating: inputRating})
+    this.setState({wholeString: combined})
     console.log(input);
   }
+
+  //function 
 
   handleBegin = (e) => {
     e.preventDefault()
@@ -74,6 +80,17 @@ class App extends Component {
   handleToleroNavClick = (e) => {
     e.preventDefault()
     this.setState({page: 0})
+  }
+
+  copyToClipboard = (e) => {
+    // let copyString = `◒ ${this.state.usersPos} ◟${this.state.usersRating}◞ 
+    // ◓ \n ▲ \n ◑ ${this.state.oppPos} ◜${this.state.oppRating}◝ ◐ ` ;
+    let target = document.getElementById('clipboard')
+    target.select();
+    console.log(target);
+    // copyString.select();
+    document.execCommand("copy");
+    // console.log(copyString);
   }
 
   
@@ -94,7 +111,9 @@ class App extends Component {
       { this.state.page === 2 && <Form1  handleSubmit={this.handleSubmitUsers}/> }
       { this.state.page === 3 && <Form2  handleSubmit={this.handleSubmitOpps}/> }
       { this.state.page === 4 && <Combiner subject={this.state.subject} usersPos={this.state.usersPos} 
-      usersRating={this.state.usersRating} oppPos={this.state.oppPos} oppRating={this.state.oppRating} />} 
+      usersRating={this.state.usersRating} oppPos={this.state.oppPos} oppRating={this.state.oppRating}
+      combined={this.state.wholeString} 
+      CopyToClipboard={this.copyToClipboard} />} 
 
       {/* <Combiner /> */}
       {/* { this.state.page === 2 && <Form2  handleSubmit={this.handleSubmitOpps}/> } */}

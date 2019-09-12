@@ -9,9 +9,9 @@ class Header extends Component {
         <li>
           <button onClick={this.props.tolero}>Tolero</button>
         </li>
-        <li>
+        {/* <li>
           <a href="#news">Create</a>
-        </li>
+        </li> */}
         <li>
           <a href="#contact">Log</a>
         </li>

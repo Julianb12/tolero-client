@@ -71,6 +71,11 @@ class App extends Component {
     this.pageIterate();
   }
 
+  handleToleroNavClick = (e) => {
+    e.preventDefault()
+    this.setState({page: 0})
+  }
+
   
   render() {
     // let form = this.forms[this.state.page]
@@ -81,7 +86,7 @@ class App extends Component {
 
     return (
     <div>
-      <Header />
+      <Header tolero={this.handleToleroNavClick}/>
       <Animate page={this.state.page}/>
       {/* <Info page={this.state.page}/>  */}
       { this.state.page === 0 && <Landing  beginButton={this.handleBegin}/> }
@@ -98,10 +103,6 @@ class App extends Component {
       pageIterate={this.pageIterate}/> */}
     </div>
 
-
-
-
-  
     );
   }
 }

@@ -3,10 +3,11 @@ import "./Header.css";
 
 class Header extends Component {
   render() {
+
     return (
       <ul>
         <li>
-          <a href="#home">Tolero</a>
+          <button onClick={this.props.tolero}>Tolero</button>
         </li>
         <li>
           <a href="#news">Create</a>

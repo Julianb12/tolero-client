@@ -7,21 +7,8 @@ import Header from './Header/Header';
 import Animate from './Animate/Animate';
 import Info from './Info/Info';
 import Combiner from './Helper/Combiner'
+import Landing from './Landing/Landing'
 
-const sections = [
-  {
-    title: 'More info',
-    content: 'Lorem ipsum dolor sit amet consectetur adipisicing elit.',
-  },
-  // {
-  //   title: 'Section 2',
-  //   content: 'Cupiditate tenetur aliquam necessitatibus id distinctio quas nihil ipsam nisi modi!',
-  // },
-  // {
-  //   title: 'Section 3',
-  //   content: 'Animi amet cumque sint cupiditate officia ab voluptatibus libero optio et?',
-  // },
-]
 
 class App extends Component { 
   
@@ -32,7 +19,6 @@ class App extends Component {
     usersRating: 0,
     oppPos: '',
     oppRating: 0
-    
   };
  
   // forms = {0: Form, 1: Form1, 2: Form2}
@@ -80,6 +66,11 @@ class App extends Component {
     console.log(input);
   }
 
+  handleBegin = (e) => {
+    e.preventDefault()
+    this.pageIterate();
+  }
+
   
   render() {
     // let form = this.forms[this.state.page]
@@ -91,12 +82,13 @@ class App extends Component {
     return (
     <div>
       <Header />
-      <Animate />
-      <Info sections={sections}/>
-      { this.state.page === 0 && <Form  handleSubmit={this.handleSubmitSubject}/> }
-      { this.state.page === 1 && <Form1  handleSubmit={this.handleSubmitUsers}/> }
-      { this.state.page === 2 && <Form2  handleSubmit={this.handleSubmitOpps}/> }
-      { this.state.page === 3 && <Combiner subject={this.state.subject} usersPos={this.state.usersPos} 
+      <Animate page={this.state.page}/>
+      {/* <Info page={this.state.page}/>  */}
+      { this.state.page === 0 && <Landing  beginButton={this.handleBegin}/> }
+      { this.state.page === 1 && <Form  handleSubmit={this.handleSubmitSubject}/> }
+      { this.state.page === 2 && <Form1  handleSubmit={this.handleSubmitUsers}/> }
+      { this.state.page === 3 && <Form2  handleSubmit={this.handleSubmitOpps}/> }
+      { this.state.page === 4 && <Combiner subject={this.state.subject} usersPos={this.state.usersPos} 
       usersRating={this.state.usersRating} oppPos={this.state.oppPos} oppRating={this.state.oppRating} />} 
 
       {/* <Combiner /> */}

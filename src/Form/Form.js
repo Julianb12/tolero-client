@@ -8,7 +8,7 @@ class Form extends Component {
   render() {
     return (
       <div className="Form">
-        {/* <Info sections={this.props.sections}/> */}
+        <Info />
         <form onSubmit={this.props.handleSubmit}>
           <div>
             <label htmlFor="issue">

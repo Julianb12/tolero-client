@@ -8,6 +8,7 @@ import Animate from './Animate/Animate';
 import Info from './Info/Info';
 import Combiner from './Helper/Combiner'
 import Landing from './Landing/Landing'
+import Log from './Log/Log'
 
 
 class App extends Component { 
@@ -19,10 +20,9 @@ class App extends Component {
     usersRating: 0,
     oppPos: '',
     oppRating: 0,
-    wholeString: ''
+    combined: '',
+    log: []
   };
- 
-  // forms = {0: Form, 1: Form1, 2: Form2}
 
   pageIterate = () => {
     let page = this.state.page + 1
@@ -33,11 +33,9 @@ class App extends Component {
       page 
     })
   }
-  // setSub = () => {
-  
-  // }
+
   handleSubmitSubject = (e) => {
-    //textField is Name on input
+
     e.preventDefault()
     const input = e.target.elements['subjectField'].value;
     this.pageIterate();
@@ -46,7 +44,7 @@ class App extends Component {
   }
 
   handleSubmitUsers = (e) => {
-    //textField is Name on input
+
     e.preventDefault()
     const input = e.target.elements['usersField'].value;
     const inputRating = e.target.elements['userRating'].value;
@@ -57,20 +55,20 @@ class App extends Component {
   }
 
   handleSubmitOpps = (e) => {
-    //textField is Name on input
+
     e.preventDefault()
     const input = e.target.elements['oppsField'].value;
     const inputRating = e.target.elements['oppRating'].value;
-    const combined = `◒ ${this.state.usersPos} ◟${this.state.usersRating}◞ 
-    ◓  <p>▲</p> ◑ ${this.state.oppPos} ◜${this.state.oppRating}◝ ◐ `
-    this.pageIterate();
     this.setState({oppPos: input})
     this.setState({oppRating: inputRating})
-    this.setState({wholeString: combined})
+    //combined string for adding to clipboard
+    const combined = `◒ ${this.state.usersPos} ◟${this.state.usersRating}◞ 
+    ◓  ▲ ◑ ${input} ◜${inputRating}◝ ◐  #${this.state.subject} #Tolero`
+    this.pageIterate();
+    this.setState({combined: combined})
     console.log(input);
   }
 
-  //function 
 
   handleBegin = (e) => {
     e.preventDefault()
@@ -80,6 +78,11 @@ class App extends Component {
   handleToleroNavClick = (e) => {
     e.preventDefault()
     this.setState({page: 0})
+  }
+
+  handleLogNavClick = (e) => {
+    // e.preventDefault()
+    this.setState({page: 5})
   }
 
   copyToClipboard = (e) => {
@@ -93,17 +96,16 @@ class App extends Component {
     // console.log(copyString);
   }
 
+  // updateLog(log) {
+  //   this.setState({ log: [{content: 'hello'}] });
+  // }
+
   
   render() {
-    // let form = this.forms[this.state.page]
-    
-    // const props = {
-    //   subjectInput: this.subjectInput
-    // }
 
     return (
     <div>
-      <Header tolero={this.handleToleroNavClick}/>
+      <Header tolero={this.handleToleroNavClick} log={this.handleLogNavClick}/>
       <Animate page={this.state.page}/>
       {/* <Info page={this.state.page}/>  */}
       { this.state.page === 0 && <Landing  beginButton={this.handleBegin}/> }
@@ -112,8 +114,8 @@ class App extends Component {
       { this.state.page === 3 && <Form2  handleSubmit={this.handleSubmitOpps}/> }
       { this.state.page === 4 && <Combiner subject={this.state.subject} usersPos={this.state.usersPos} 
       usersRating={this.state.usersRating} oppPos={this.state.oppPos} oppRating={this.state.oppRating}
-      combined={this.state.wholeString} 
-      CopyToClipboard={this.copyToClipboard} />} 
+      combined={this.state.combined} CopyToClipboard={this.copyToClipboard} goToLog={this.handleLogNavClick}/>} 
+      { this.state.page === 5 && <Log log={this.state.log} updateLog={this.updateLog} />}
 
       {/* <Combiner /> */}
       {/* { this.state.page === 2 && <Form2  handleSubmit={this.handleSubmitOpps}/> } */}
@@ -130,8 +132,3 @@ export default App;
 
 
 
-// const forms = { 0: Form0, 1: Form1, 2: Form2 }; let form = forms[this.state.page];
-
-// { form }
-
-// <form prop1=prop></form>

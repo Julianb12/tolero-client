@@ -13,7 +13,7 @@ class Header extends Component {
           <a href="#news">Create</a>
         </li> */}
         <li>
-          <a href="#contact">Log</a>
+        <button onClick={this.props.log}>Log</button>
         </li>
       </ul>
     );

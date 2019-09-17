@@ -1,0 +1,12 @@
+
+/* .first-description{
+  font-family: 'Crimson Text';
+  font-weight: 600;
+} */
+
+.grey-body{
+  background-color: grey;
+  margin-top: 40px;
+  padding: 150px;
+  filter: drop-shadow(0 0 0.22rem darkgrey);
+}

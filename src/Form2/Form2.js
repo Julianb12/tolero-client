@@ -8,7 +8,7 @@ class Form2 extends Component {
   render() {
     return (
       <div className="Form">
-        <Info />
+        <Info page={this.props.page}/>
         <form onSubmit={this.props.handleSubmit}>
           <div>
             <label htmlFor="opps">
@@ -23,14 +23,21 @@ class Form2 extends Component {
          </div>
          <div>
           <label 
-            htmlFor="rating">
+            htmlFor="Rating">
             rating
           </label>
-          <input 
+          <select name="Rating" defaultValue="3">
+            <option value="1">1: do not agree</option>
+            <option value="2">2: not agree</option>
+            <option value="3" >3: neutral</option>
+            <option value="4">4: agree</option>
+            <option value="5">5: strongly agree</option>
+          </select>
+          {/* <input 
             type="text" 
             name="oppRating" 
             id="rating"
-          />
+          /> */}
          </div>
         <button>next</button>
         </form>

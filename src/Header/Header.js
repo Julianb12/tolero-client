@@ -7,13 +7,13 @@ class Header extends Component {
     return (
       <ul>
         <li>
-          <button onClick={this.props.tolero}>Tolero</button>
+          <button className="home-button" onClick={this.props.tolero}>Tolero</button>
         </li>
         {/* <li>
           <a href="#news">Create</a>
         </li> */}
         <li>
-        <button onClick={this.props.log}>Log</button>
+        <button className="log-button" onClick={this.props.log}>log</button>
         </li>
       </ul>
     );

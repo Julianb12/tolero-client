@@ -1,0 +1,11 @@
+.first-description{
+  font-family: 'Crimson Text';
+  font-weight: 400;
+  /* font-size: 18px; */
+  font-size: 3.5vw;
+  margin-top: 150px;
+  margin-bottom: 0px;
+  line-height: 130%;
+  text-align: center;
+  letter-spacing: .3px;
+}

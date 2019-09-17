@@ -1,125 +1,102 @@
 import React, { Component } from 'react'
 import './Info.css'
 
-
-const sections = [
-  {
-    title: 'More info',
-    content: 'Lorem ipsum dolor sit amet consectetur adipisicing elit.',
-  },
-  // {
-  //   title: 'Section 2',
-  //   content: 'Cupiditate tenetur aliquam necessitatibus id distinctio quas nihil ipsam nisi modi!',
-  // },
-  // {
-  //   title: 'Section 3',
-  //   content: 'Animi amet cumque sint cupiditate officia ab voluptatibus libero optio et?',
-  // },
-]
 class Info extends Component {
-  
-
-  static defaultProps = {
-    sections: []
-  };
+  // constructor(props) {
+  //   super(props)
+  //   this.state = {
+  //     content: false
+  //   }
+  //   this.showContent = this.showContent.bind(this)
+  // }
   
   state = {
-    activeSectionIndex: null,
+    content: false
   }
-  
-  handleSetActiveSecion = (sectionIndex) => {
-    this.setState({ activeSectionIndex: sectionIndex })
+
+
+  showContent = () => {
+    console.log('here')
+    this.setState({content: !this.state.content})
+    console.log(this.state.content)
   }
-  
-  renderItem(section, idx, activeSectionIndex) {
-    return (
-      <li className='Accordion__item' key={idx}>
-        <button
-          type='button'
-          onClick={() => this.handleSetActiveSecion(idx)}
-        >
-          {section.title}
-        </button>
-        {(activeSectionIndex === idx) && <p>{section.content}</p>}
-      </li>
-    )
-  }
-  
+
+
   render() {
 
-      const { activeSectionIndex } = this.state
-      // const { sections } = this.sections
-      return (
-        <ul className='Accordion'>
-          {sections.map((section, idx) =>
-            this.renderItem(section, idx, activeSectionIndex)
-          )}
-        </ul>
-      )
-
+    return(
+      <div>
+        <button onClick={this.showContent}>More Info</button>
+        { this.state.content === true && this.props.page === 1 && <p>lorem one</p> }
+        { this.state.content === true && this.props.page === 2 && <p>lorem two</p> }
+        { this.state.content === true && this.props.page === 3 && <p>lorem three</p> }
+      </div>
+    )
   }
-  }
-  
-  export default Info;
-  
-//   render() {
-//     // let coll = document.getElementsByClassName("collapsible");
-//     // let i;
-    
-//     // for (i = 0; i < coll.length; i++) {
-//     //   coll[i].addEventListener("click", function() {
-//     //     this.classList.toggle("active");
-//     //     var content = this.nextElementSibling;
-//     //     if (content.style.display === "block") {
-//     //       content.style.display = "none";
-//     //     } else {
-//     //       content.style.display = "block";
-//     //     }
-//     //   });
-//     // }
-//     const showInfo = () => {
-//       'klad kfkjsd flkaj sdfa'
-//     }
+}
 
+export default Info;
+
+
+
+
+
+// const sections = [
+//   {
+//     title: 'More info',
+//     content: 'Lorem ipsum dolor sit amet consectetur adipisicing elit.',
+//   },
+//   // {
+//   //   title: 'Section 2',
+//   //   content: 'Cupiditate tenetur aliquam necessitatibus id distinctio quas nihil ipsam nisi modi!',
+//   // },
+//   // {
+//   //   title: 'Section 3',
+//   //   content: 'Animi amet cumque sint cupiditate officia ab voluptatibus libero optio et?',
+//   // },
+// ]
+// class Info extends Component {
+
+//   static defaultProps = {
+//     sections: []
+//   };
+  
+//   state = {
+//     activeSectionIndex: null,
+//   }
+  
+//   handleSetActiveSecion = (sectionIndex) => {
+//     this.setState({ activeSectionIndex: sectionIndex })
+//   }
+  
+//   renderItem(section, idx, activeSectionIndex) {
 //     return (
-//       <div>
-
-//         <p>A Collapsible:</p>
-//         <button class="collapsible" onClick={this.showInfo}>Open Collapsible</button>
-//         <div class="content">
-//         <p>${showInfo}</p>
-//         </div>
-
-//       </div>
-
+//       <li className='Accordion__item' key={idx}>
+//         <button
+//           type='button'
+//           onClick={() => this.handleSetActiveSecion(idx)}
+//         >
+//           {section.title}
+//         </button>
+//         {(activeSectionIndex === idx) && <p>{section.content}</p>}
+//       </li>
 //     )
 //   }
-// }
+  
+//   render() {
 
-// export default Info;
+//       const { activeSectionIndex } = this.state
+//       // const { sections } = this.sections
+//       return (
+//         <ul className='Accordion'>
+//           {sections.map((section, idx) =>
+//             this.renderItem(section, idx, activeSectionIndex)
+//           )}
+//         </ul>
+//       )
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+//   }
+//   }
+  
+//   export default Info;
+  

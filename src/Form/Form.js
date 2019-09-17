@@ -7,22 +7,24 @@ import Info from '../Info/Info'
 class Form extends Component {
   render() {
     return (
-      <div className="Form">
-        <Info />
+      <div className="form">
+        <Info page={this.props.page}/>
         <form onSubmit={this.props.handleSubmit}>
           <div>
             <label htmlFor="issue">
-              Subject/issue
+              Subject
             </label>
-            <input 
-              type="text" 
+            <textarea
+              className="text-area"
+              maxLength="24"
               name="subjectField" 
               id="issue"
               value={this.props.subject}
               />
          </div>
-
-        <button>next</button>
+          <div className="btn-container">
+           <button className="next">next</button>
+          </div>
         </form>
       </div>
     );
@@ -30,3 +32,4 @@ class Form extends Component {
 }
 
 export default Form;
+

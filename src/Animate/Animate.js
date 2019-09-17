@@ -1,10 +1,11 @@
 import React, { Component } from 'react'
 import Lottie from 'react-lottie'
 // import animationData from '../lotties/448-ripple-loading-animation.json'
-import data1 from '../lotties/data_1.json'
-import data2 from '../lotties/data_2.json'
-import data3 from '../lotties/data_3.json'
-import data4 from '../lotties/data_4.json'
+import tSeq1 from '../lotties/t-seq-1.json'
+import tSeq2 from '../lotties/t-seq-2.json'
+import tSeq3 from '../lotties/t-seq-3.json'
+import tSeq4 from '../lotties/t-seq-4.json'
+import tLanding from '../lotties/t-landing-pg.json'
 
 class Animate extends Component {
 
@@ -19,29 +20,44 @@ class Animate extends Component {
             preserveAspectRatio: 'xMidYMid slice'
           }
         };
+        const animationLanding = {
+          loop: true,
+          autoplay: true, 
+          animationData: tLanding,
+          rendererSettings: {
+            preserveAspectRatio: 'xMidYMid slice'
+          }
+        };
 
     let part = this.props.page;
-
+    
+    // if (part === 0){
+    //   animation.animationData = tLanding;
+    // }
     if (part === 1){
-      animation.animationData = data1;
+      animation.animationData = tSeq1;
     }
     if (part === 2){
-      animation.animationData = data2;
+      animation.animationData = tSeq2;
     }
     if (part === 3){
-      animation.animationData = data3;
+      animation.animationData = tSeq3;
     }
     if (part === 4){
-      animation.animationData = data4;
+      animation.animationData = tSeq4;
     }
     // animation.animationData =
 
     return(
       <div>
-        <Lottie options={animation}
-              height={200}
-              width={200}
-        />
+        {this.props.page === 0 && <Lottie options={animationLanding}/> }
+        {this.props.page > 0 && <Lottie options={animation}
+          height={400}
+          width={400}/> }
+        {/* <Lottie options={animation}
+               height={400}
+               width={400}
+        /> */}
       </div>
     )
   }

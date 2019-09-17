@@ -9,7 +9,7 @@ class Combiner extends Component {
 
   handleSubmit = (e) => {
     // e.preventDefault()
-    this.props.goToLog()
+    // this.props.goToLog()
     return fetch( `${config.API_ENDPOINT}/posts`, {
       method: 'POST',
       headers: {
@@ -22,7 +22,7 @@ class Combiner extends Component {
       .then(res =>
         (!res.ok)
           ? res.json().then(e => Promise.reject(e))
-          : res.json()
+          : this.props.goToLog()
           )
       
   }

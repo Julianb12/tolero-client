@@ -38,9 +38,11 @@
 .text-area{
   resize: none;
   overflow: auto;
-  align-content: space-around;
-  border-radius: 15px;
-  border-color: grey;
-  height: 100px;
-  width: 200px;
+  outline: none;
+}
+
+.drop-down{
+  background-color: white;
+  outline: none;
+
 }

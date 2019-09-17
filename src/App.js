@@ -9,7 +9,9 @@ import Info from './Info/Info';
 import Combiner from './Helper/Combiner'
 import Landing from './Landing/Landing'
 import Log from './Log/Log'
+import Description from './Description/Description'
 
+// zeit address: https://tolero-app.julianb1212.now.sh
 
 class App extends Component { 
   
@@ -47,7 +49,7 @@ class App extends Component {
 
     e.preventDefault()
     const input = e.target.elements['usersField'].value;
-    const inputRating = e.target.elements['userRating'].value;
+    const inputRating = e.target.elements['Rating'].value;
     this.pageIterate();
     this.setState({usersPos: input})
     this.setState({usersRating: inputRating})
@@ -58,7 +60,7 @@ class App extends Component {
 
     e.preventDefault()
     const input = e.target.elements['oppsField'].value;
-    const inputRating = e.target.elements['oppRating'].value;
+    const inputRating = e.target.elements['Rating'].value;
     this.setState({oppPos: input})
     this.setState({oppRating: inputRating})
     //combined string for adding to clipboard
@@ -106,12 +108,16 @@ class App extends Component {
     return (
     <div>
       <Header tolero={this.handleToleroNavClick} log={this.handleLogNavClick}/>
-      <Animate page={this.state.page}/>
+      { this.state.page > 0 && <Animate page={this.state.page}/> }
+      {/* <Animate page={this.state.page}/> */}
       {/* <Info page={this.state.page}/>  */}
-      { this.state.page === 0 && <Landing  beginButton={this.handleBegin}/> }
-      { this.state.page === 1 && <Form  handleSubmit={this.handleSubmitSubject}/> }
-      { this.state.page === 2 && <Form1  handleSubmit={this.handleSubmitUsers}/> }
-      { this.state.page === 3 && <Form2  handleSubmit={this.handleSubmitOpps}/> }
+      { this.state.page === 0 && <>
+      <Description />
+      <Animate page={this.state.page}/>
+      <Landing  beginButton={this.handleBegin}/> </> }
+      { this.state.page === 1 && <Form  page={this.state.page} handleSubmit={this.handleSubmitSubject}/> }
+      { this.state.page === 2 && <Form1  page={this.state.page} handleSubmit={this.handleSubmitUsers}/> }
+      { this.state.page === 3 && <Form2  page={this.state.page} handleSubmit={this.handleSubmitOpps}/> }
       { this.state.page === 4 && <Combiner subject={this.state.subject} usersPos={this.state.usersPos} 
       usersRating={this.state.usersRating} oppPos={this.state.oppPos} oppRating={this.state.oppRating}
       combined={this.state.combined} CopyToClipboard={this.copyToClipboard} goToLog={this.handleLogNavClick}/>} 

@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import config from '../config'
+import './Log.css'
 
 
 export default class Log extends Component {
@@ -17,11 +18,10 @@ export default class Log extends Component {
 
   render() {
     return(
-      <div>
-        <h1>Log</h1>
-        <div>
+      <div className="page">
+        <div >
           {this.state.posts.map(post => (
-            <div key={post.id}>{post.content}</div>
+            <div className="post" key={post.id}>{post.content}</div>
           ))}
 
           {/* {this.props.log.map(posts => (

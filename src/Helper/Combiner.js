@@ -29,19 +29,23 @@ class Combiner extends Component {
 
   render() {
       return (
-        <div> 
+        <div className="combined"> 
           <input type='textarea' id='clipboard' defaultValue={this.props.combined} >
           </input>
-          <h2>
+          <h2 className="string-a">
             {this.props.subject}
           </h2>
-          <p>
-          ◒ {this.props.usersPos} ◟{this.props.usersRating}◞ ◓ 
-          ▲ 
-          ◑ {this.props.oppPos} ◜{this.props.oppRating}◝ ◐ 
-          </p>
-          <button type='submit' onClick={this.handleSubmit}>Add to log</button>
-          <button onClick={this.props.CopyToClipboard}>Copy to clipboard</button>
+          <div className="string">
+            <p>
+              ◒ {this.props.usersPos} ◟{this.props.usersRating}◞ ◓ 
+              <br/>▲<br/> 
+              ◑ {this.props.oppPos} ◜{this.props.oppRating}◝ ◐ 
+            </p>
+          </div>
+          <div className="btn-container-combiner">
+            <button className="right-button" onClick={this.props.CopyToClipboard}>1: Copy to clipboard</button>
+            <button className="left-button" type='submit' onClick={this.handleSubmit}>2: Add to log</button>
+          </div>
         </div>
       );
     }

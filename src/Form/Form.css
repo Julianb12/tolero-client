@@ -1,8 +1,26 @@
+
 .form{
+  /* visibility:hidden; */
+  /* transition:visibility 1s; */
+  /* transition-duration: 1s; */
+  opacity: 1.0;
   display: flex;
+  margin-top: 0px;
   /* justify-content: center; */
   flex-flow: column;
   align-items: center;
+  animation-name: move;
+  animation-duration: 1.75s;
+  animation-timing-function: cubic-bezier(1, 0, 0.5, 0);
+}
+
+@keyframes move {
+ from {opacity: 0.0;
+      margin-top: 15px;
+      visibility: hidden;}
+ to {opacity: 1.0;
+      margin-top: 0px;
+      visibility: visible;}
 }
 
 .btn-container{
@@ -23,24 +41,33 @@
   cursor: pointer;
   /* min-height: 20px; */
   /* height: 20px; */
-  margin-top: 30px;
+  margin-top: 15px;
   padding-left: 30px;
   padding-right: 30px;
-  padding-top: 7px;
+  padding-top: 4px;
   padding-bottom: 7px;
-  /* margin-bottom: 15px; */
   outline: none;
-  /* float: left; */
-  /* box-sizing: border-box; */
-  /* display: block; */
+  animation-name: next;
+  animation-duration: 2.2s;
+  animation-timing-function: cubic-bezier(1, 0, .75, 0)
 }
+@keyframes next {
+  from {opacity: 0.0;
 
-.text-area{
+       visibility: hidden;}
+  to {opacity: 1.0;
+
+       visibility: visible;}
+ }
+
+
+.text-input{
   resize: none;
   overflow: auto;
-  align-content: space-around;
-  border-radius: 15px;
-  border-color: grey;
-  height: 100px;
-  width: 200px;
+  outline: none;
+  font-size: 14px;
+  height: 20px;
+  border-radius: 20px;
+  border-color: gray;
+  width: 300px;
 }

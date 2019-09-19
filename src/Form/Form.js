@@ -12,10 +12,11 @@ class Form extends Component {
         <form onSubmit={this.props.handleSubmit}>
           <div>
             <label htmlFor="issue">
-              Subject
+              {/* Subject */}
             </label>
             <textarea
-              className="text-area"
+              placeholder="  Subject"
+              className="text-input"
               maxLength="24"
               name="subjectField" 
               id="issue"
@@ -23,7 +24,7 @@ class Form extends Component {
               />
          </div>
           <div className="btn-container">
-           <button className="next">next</button>
+           <button className="next">Next</button>
           </div>
         </form>
       </div>

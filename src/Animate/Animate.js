@@ -6,6 +6,7 @@ import tSeq2 from '../lotties/t-seq-2.json'
 import tSeq3 from '../lotties/t-seq-3.json'
 import tSeq4 from '../lotties/t-seq-4.json'
 import tLanding from '../lotties/t-landing-pg.json'
+import './Animate.css'
 
 class Animate extends Component {
 
@@ -50,14 +51,15 @@ class Animate extends Component {
 
     return(
       <div>
+      <div className="lottie">
         {this.props.page === 0 && <Lottie options={animationLanding}/> }
-        {this.props.page > 0 && <Lottie options={animation}
-          height={400}
-          width={400}/> }
-        {/* <Lottie options={animation}
-               height={400}
-               width={400}
-        /> */}
+        {this.props.page > 0 && this.props.page < 5 && <Lottie options={animation}
+          height={450}
+          width={450}/> }
+        {/* {this.props.page === 5 && <Lottie options={animation}
+          height={450}
+          width={450}/> } */}
+      </div>
       </div>
     )
   }

@@ -1,4 +1,89 @@
+/* for copy to clipboard */
 #clipboard {
   opacity: 0;
   width: 1px;
+}
+
+.combined{
+  display: flex;
+  margin-top: 0px;
+  flex-flow: column;
+  align-items: center;
+  animation-name: combined;
+  animation-duration: 1s;
+  animation-timing-function: cubic-bezier(1, 0, 0.5, 0);
+}
+@keyframes combined {
+ from {opacity: 0.0;
+      margin-top: 15px;
+      visibility: hidden;}
+ to {opacity: 1.0;
+      margin-top: 0px;
+      visibility: visible;}
+}
+
+.btn-container-combiner{
+  display: flex;
+  justify-content: center;
+}
+.string-a{
+  font-family: 'Comfortaa';
+  font-size: 3.5vw;
+  margin-top: 100px;
+  margin-bottom: 0px;
+  line-height: 130%;
+  text-align: center;
+  letter-spacing: .3px;
+}
+
+.string{
+  font-family: 'Comfortaa';
+  font-size: 3.5vw;
+  margin-top: 0px;
+  margin-bottom: 20px;
+  margin-left: 18px;
+  margin-right: 18px;
+  line-height: 130%;
+  text-align: center;
+  letter-spacing: .3px;
+}
+
+
+.left-button{
+  background-color: grey;
+  color: white;
+  letter-spacing: 2px; 
+  padding-left: 30px;
+  padding-right: 30px;
+  padding-top: 7px;
+  padding-bottom: 10px;
+  margin-top: 30px;
+  /* font-size: 16px; */
+  border-radius:  0px 20px 20px 0px;
+  font-size: 2.5vw;
+  cursor: pointer;
+  font-weight: bold;
+  outline: none;
+  border-width: 2px;
+  border-color: white;
+  /* border: none; */
+}
+.right-button{
+  background-color: grey;
+  color: white;
+  letter-spacing: 2px;
+  padding-left: 30px;
+  padding-right: 30px;
+  padding-top: 7px;
+  padding-bottom: 10px;
+  margin-top: 30px;
+  /* font-size: 16px; */
+  border-radius:  20px 0px 0px 20px; 
+  font-size: 2.5vw;
+  cursor: pointer;
+  font-weight: bold;
+  outline: none;
+  border-width: 2px;
+  border-color: white;
+  /* border: none; */
 }

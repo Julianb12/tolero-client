@@ -1,0 +1,19 @@
+
+.lottie{
+  margin-top: 25px;
+}
+
+.last-lottie{
+  height: 450px;
+  animation-name: lottie-out;
+  animation-duration: 2s;
+  animation-timing-function: cubic-bezier(1, 0, 0.5, 0)
+}
+@keyframes lottie-out {
+  from {
+    height: 450px;
+}
+  to {
+    height: 0px;
+}
+ }

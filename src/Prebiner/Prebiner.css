@@ -1,0 +1,36 @@
+.btn-container-pre{
+  display: flex;
+  justify-content: center;
+  margin: 0px;
+}
+
+.next-three{
+  border: none;
+  background-color: black;
+  color: white;
+  font-weight: bold;
+  padding: 10px;
+  border-radius: 40px;
+  letter-spacing: 2.5px;
+  /* font-family: 'Comfortaa'; */
+  font-size: 16px;
+  cursor: pointer;
+  /* min-height: 20px; */
+  /* height: 20px; */
+  margin-top: 0px;
+  padding-left: 30px;
+  padding-right: 30px;
+  padding-top: 7px;
+  padding-bottom: 7px;
+  /* margin-bottom: 15px; */
+  outline: none;
+  animation-name: next-three;
+  animation-duration: 3s;
+  animation-timing-function: cubic-bezier(1, 0, .6, 0)
+}
+@keyframes next-three {
+  from {opacity: 0.0;
+       visibility: hidden;}
+  to {opacity: 1.0;
+       visibility: visible;}
+ }

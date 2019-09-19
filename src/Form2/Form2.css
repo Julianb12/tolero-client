@@ -1,16 +1,16 @@
-.form-one{
+.form-two{
   display: flex;
   /* justify-content: center; */
   flex-flow: column;
   align-items: center;
   opacity: 1.0;
   margin-top: 0px;
-  animation-name: moveTwo;
-  animation-duration: 2.8s;
-  animation-timing-function: cubic-bezier(1, 0, 0.5, 0)
+  animation-name: moveThree;
+  animation-duration: 4.8s;
+  animation-timing-function: cubic-bezier(1, 0, 0.4, 0)
 }
 
-@keyframes moveTwo {
+@keyframes moveThree {
   from {opacity: 0.0;
        margin-top: 15px;
        visibility: hidden;}
@@ -18,13 +18,13 @@
        margin-top: 0px;
        visibility: visible;}
  }
- 
+
 .btn-container{
   display: flex;
   justify-content: center;
 }
 
-.next-one{
+.next-two{
   border: none;
   background-color: grey;
   color: white;
@@ -40,20 +40,18 @@
   margin-top: 12px;
   padding-left: 30px;
   padding-right: 30px;
-  padding-top: 4px;
+  padding-top: 7px;
   padding-bottom: 7px;
   /* margin-bottom: 15px; */
   outline: none;
-  animation-name: next-one;
-  animation-duration: 3.7s;
-  animation-timing-function: cubic-bezier(1, 0, .75, 0)
+  animation-name: next-two;
+  animation-duration: 5.7s;
+  animation-timing-function: cubic-bezier(1, 0, .6, 0)
 }
-@keyframes next-one {
+@keyframes next-two {
   from {opacity: 0.0;
-
        visibility: hidden;}
   to {opacity: 1.0;
-
        visibility: visible;}
  }
 
@@ -73,5 +71,4 @@
   border-color: grey;
   color: grey;
   outline: none;
-
 }

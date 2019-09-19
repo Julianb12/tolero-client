@@ -26,7 +26,7 @@ class Info extends Component {
 
     return(
       <div>
-        <button onClick={this.showContent}>More Info</button>
+        <button className="info-button" onClick={this.showContent}>Info</button>
         { this.state.content === true && this.props.page === 1 && <p>lorem one</p> }
         { this.state.content === true && this.props.page === 2 && <p>lorem two</p> }
         { this.state.content === true && this.props.page === 3 && <p>lorem three</p> }

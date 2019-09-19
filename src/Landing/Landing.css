@@ -8,5 +8,29 @@
   background-color: grey;
   margin-top: 40px;
   padding: 150px;
+  color: white;
+  font-size: 20px;
+  font-family: 'Crimson Text';
   filter: drop-shadow(0 0 0.22rem darkgrey);
+}
+
+.how-title{
+  text-align: center;
+  font-family: 'Crimson Text';
+  margin-bottom: 0px;
+  margin-top: 50px;
+  font-size: 35px;
+}
+
+.how-to{
+  display: flex;
+  margin-top: 80px;
+  /* flex-flow:  */
+  align-items: center;
+  font-size: 16px;
+}
+
+.imgs{
+  width: 45%;
+  margin-left: 30px;
 }

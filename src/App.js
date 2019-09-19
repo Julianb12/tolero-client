@@ -7,6 +7,7 @@ import Header from './Header/Header';
 import Animate from './Animate/Animate';
 import Info from './Info/Info';
 import Combiner from './Helper/Combiner'
+import Prebiner from './Prebiner/Prebiner'
 import Landing from './Landing/Landing'
 import Log from './Log/Log'
 import Description from './Description/Description'
@@ -28,7 +29,7 @@ class App extends Component {
 
   pageIterate = () => {
     let page = this.state.page + 1
-    if (page > 5){
+    if (page > 6){
       page = 0;
     }
     this.setState({
@@ -64,11 +65,31 @@ class App extends Component {
     this.setState({oppPos: input})
     this.setState({oppRating: inputRating})
     //combined string for adding to clipboard
-    const combined = `◒ ${this.state.usersPos} ◟${this.state.usersRating}◞ 
-    ◓  ▲ ◑ ${input} ◜${inputRating}◝ ◐  #${this.state.subject} #Tolero`
+    const combined = `
+    ◒ ${this.state.usersPos} ◟${this.state.usersRating}◞ 
+    ◓
+    ▲
+    ◑ ${input} ◜${inputRating}◝ ◐  #${this.state.subject}
+    #Tolero
+    `
     this.pageIterate();
     this.setState({combined: combined})
     console.log(input);
+  }
+
+  handleSubmitPre = (e) => {
+
+    e.preventDefault()
+    // const input = e.target.elements['oppsField'].value;
+    // const inputRating = e.target.elements['Rating'].value;
+    // this.setState({oppPos: input})
+    // this.setState({oppRating: inputRating})
+    // //combined string for adding to clipboard
+    // const combined = `◒ ${this.state.usersPos} ◟${this.state.usersRating}◞ 
+    // ◓  ▲ ◑ ${input} ◜${inputRating}◝ ◐  #${this.state.subject} #Tolero`
+    this.pageIterate();
+    // this.setState({combined: combined})
+
   }
 
 
@@ -84,7 +105,7 @@ class App extends Component {
 
   handleLogNavClick = (e) => {
     // e.preventDefault()
-    this.setState({page: 5})
+    this.setState({page: 6})
   }
 
   copyToClipboard = (e) => {
@@ -118,10 +139,11 @@ class App extends Component {
       { this.state.page === 1 && <Form  page={this.state.page} handleSubmit={this.handleSubmitSubject}/> }
       { this.state.page === 2 && <Form1  page={this.state.page} handleSubmit={this.handleSubmitUsers}/> }
       { this.state.page === 3 && <Form2  page={this.state.page} handleSubmit={this.handleSubmitOpps}/> }
-      { this.state.page === 4 && <Combiner subject={this.state.subject} usersPos={this.state.usersPos} 
+      { this.state.page === 4 && <Prebiner handleSubmit={this.handleSubmitPre} />}
+      { this.state.page === 5 && <Combiner subject={this.state.subject} usersPos={this.state.usersPos}  
       usersRating={this.state.usersRating} oppPos={this.state.oppPos} oppRating={this.state.oppRating}
       combined={this.state.combined} CopyToClipboard={this.copyToClipboard} goToLog={this.handleLogNavClick}/>} 
-      { this.state.page === 5 && <Log log={this.state.log} updateLog={this.updateLog} />}
+      { this.state.page === 6 && <Log log={this.state.log} updateLog={this.updateLog} />}
 
       {/* <Combiner /> */}
       {/* { this.state.page === 2 && <Form2  handleSubmit={this.handleSubmitOpps}/> } */}

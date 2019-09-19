@@ -7,7 +7,7 @@ import Info from '../Info/Info'
 class Form1 extends Component {
   render() {
     return (
-      <div className="form">
+      <div className="form-one">
         <Info page={this.props.page}/>
         <form onSubmit={this.props.handleSubmit}>
           <div>
@@ -15,7 +15,7 @@ class Form1 extends Component {
               {/* User Position */}
             </label>
             <textarea
-              placeholder=" Your opinion"
+              placeholder="  Your opinion"
               maxLength="120"
               className="text-area"
               type="text" 
@@ -43,7 +43,7 @@ class Form1 extends Component {
           /> */}
          </div>
          <div className="btn-container">
-           <button className="next">next</button>
+           <button className="next-one">next</button>
          </div>
         </form>
       </div>

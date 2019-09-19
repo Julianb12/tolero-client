@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import '../Form/Form.css';
+import './Form2.css';
 import Info from '../Info/Info'
 
 
@@ -7,14 +7,17 @@ import Info from '../Info/Info'
 class Form2 extends Component {
   render() {
     return (
-      <div className="Form">
+      <div className="form-two">
         <Info page={this.props.page}/>
         <form onSubmit={this.props.handleSubmit}>
           <div>
             <label htmlFor="opps">
-              Opp Position
+              {/* Opp Position */}
             </label>
-            <input 
+            <textarea
+              placeholder="  Opposing opinion"
+              maxLength="120"
+              className="text-area"
               type="text" 
               name="oppsField" 
               id="opps"
@@ -24,14 +27,14 @@ class Form2 extends Component {
          <div>
           <label 
             htmlFor="Rating">
-            rating
+            {/* rating */}
           </label>
-          <select name="Rating" defaultValue="3">
-            <option value="1">1: do not agree</option>
-            <option value="2">2: not agree</option>
-            <option value="3" >3: neutral</option>
-            <option value="4">4: agree</option>
-            <option value="5">5: strongly agree</option>
+          <select className="drop-down" name="Rating" defaultValue="1">
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
           </select>
           {/* <input 
             type="text" 
@@ -39,7 +42,9 @@ class Form2 extends Component {
             id="rating"
           /> */}
          </div>
-        <button>next</button>
+        <div className="btn-container">
+          <button className="next-two">Next</button>
+        </div>
         </form>
       </div>
     );

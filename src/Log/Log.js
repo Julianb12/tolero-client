@@ -12,7 +12,7 @@ export default class Log extends Component {
 
       .then(res => res.json())
       .then(posts => this.setState({ posts }))
-      .then(posts => console.log(posts))
+      // .then(posts => console.log(posts))
   }
 
 
@@ -20,8 +20,8 @@ export default class Log extends Component {
     return(
       <div className="page">
         <div >
-          {this.state.posts.map(post => (
-            <div className="post" key={post.id}>{post.content}</div>
+          {this.state.posts.map((post, index) => (
+            <div className="post" key={index}>{post.content}</div>
           ))}
 
           {/* {this.props.log.map(posts => (

@@ -54,8 +54,9 @@ class Animate extends Component {
       <div className="lottie">
         {this.props.page === 0 && <Lottie options={animationLanding}/> }
         {this.props.page > 0 && this.props.page < 5 && <Lottie options={animation}
-          height={450}
-          width={450}/> }
+          height={550}
+          width={550}
+          /> }
         {/* {this.props.page === 5 && <Lottie options={animation}
           height={450}
           width={450}/> } */}

@@ -3,34 +3,128 @@
   font-family: 'Crimson Text';
   font-weight: 600;
 } */
+h4 {
+  margin: 0;
+}
 
+h2 {
+  font-size: 50px;
+}
 .grey-body{
+  font-size: 30px;
+  margin-top: 200px;
+  /* margin-bottom: 250px; */
+  padding-right: 90px;
+  padding-left: 90px;
+  padding-top: 100px;
+  line-height: 130%;
+  text-align: center;
+  letter-spacing: .3px;
   background-color: grey;
-  margin-top: 40px;
-  padding: 150px;
+  /* padding: 50px; */
   color: white;
-  font-size: 20px;
+  /* font-size: 20px; */
   font-family: 'Crimson Text';
   filter: drop-shadow(0 0 0.22rem darkgrey);
 }
 
-.how-title{
-  text-align: center;
+.teeter-text{
+  display: flex;
+  flex-direction: row-reverse;
+  margin-top: 10%;
+  margin-bottom: 10%;
+  font-size: 4vw;
+  justify-content: center;
+ 
+}
+.t-text{
+  margin-right: 40px;
+  padding-top: 75px;
+
+}
+.t-animate{
+  padding-right: 35px;
+  
+  /* size: 3.5vh; */
+}
+
+hr{
+  margin-top: 80px;
+  margin-bottom: 80px;
+  height: 2.5px;
+  background-color: white;
+}
+
+.how{
+  /* text-align: center; */
+  margin-left: 5%;
   font-family: 'Crimson Text';
   margin-bottom: 0px;
-  margin-top: 50px;
-  font-size: 35px;
+  margin-top: 100px;
+  font-size: 48px;
+}
+
+.how-steps{
+  /* display: flex; */
+  flex-direction: column;
+  margin-top: 0px;
+  margin-bottom: 70px;
+  /* flex-flow:  */
+  text-justify: left;
+  /* text-align: center; */
+
+  font-size: 24px;
 }
 
 .how-to{
   display: flex;
-  margin-top: 80px;
+  margin-top: 10px;
   /* flex-flow:  */
-  align-items: center;
+  /* align-items: center; */
   font-size: 16px;
 }
 
+.howitlooks{
+  margin-bottom: 60px;
+  padding-bottom: 0px;
+}
 .imgs{
   width: 45%;
   margin-left: 30px;
+}
+
+.post-it{
+  text-align: center;
+  margin-top: 40px;
+  margin-bottom: 70px;
+  /* flex-flow:  */
+  font-family: 'Crimson Text';
+  /* text-align: center; */
+
+  font-size: 29px;
+}
+
+.begin{
+  border: none;
+  background-color: grey;
+  color: white;
+  font-weight: bold;
+  border-radius: 40px;
+  letter-spacing: 2.5px;
+  /* font-family: 'Comfortaa'; */
+  font-size: 22px;
+  cursor: pointer;
+  /* min-height: 20px; */
+  /* height: 20px; */
+  /* margin-top: 12px; */
+  margin-bottom: 200px;
+  padding-left: 30px;
+  padding-right: 30px;
+  padding-top: 7px;
+  padding-bottom: 7px;
+  /* margin-bottom: 15px; */
+  outline: none;
+  display: flex;
+  align-items: center;
+
 }

@@ -5,7 +5,7 @@ import Form1 from './Form1/form1.js'
 import Form2 from './Form2/Form2.js'
 import Header from './Header/Header';
 import Animate from './Animate/Animate';
-import Info from './Info/Info';
+// import Info from './Info/Info';
 import Combiner from './Helper/Combiner'
 import Prebiner from './Prebiner/Prebiner'
 import Landing from './Landing/Landing'

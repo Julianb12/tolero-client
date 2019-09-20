@@ -69,7 +69,7 @@ class Landing extends Component {
           <img className="imgs" src={image2} />
         </div>
         <div className="post-it">
-            <p>Post your Tolero anywhere adding nuance and depth to what you share.</p>
+            <p>Post your Tolero anywhere, adding nuance and depth to what you share.</p>
         </div>
         <div className="btn-container">
         <button className="begin" onClick={this.props.beginButton}>Begin</button>

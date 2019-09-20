@@ -2,6 +2,10 @@
   "version": 2,
   "name": "tolero-app",
   "routes": [
+    {
+      "src": "^/manifest.json",
+      "dest": "/manifest.json"
+    },
       {
         "src": "^/static/(.*)",
         "dest": "/static/$1"

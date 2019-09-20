@@ -3,6 +3,14 @@
   "name": "tolero-app",
   "routes": [
     {
+      "src": "^/logo512.png",
+      "dest": "/logo512.png"
+    },
+    {
+      "src": "^/logo192.png",
+      "dest": "/logo192.png"
+    },
+    {
       "src": "^/manifest.json",
       "dest": "/manifest.json"
     },

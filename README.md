@@ -4,16 +4,6 @@ https://tolero-app.julianb1212.now.sh/
 </br>
 </br>
 
-//![screen 1](/images/s1.png)
-//</br>
-//![screen 2](/images/s2.png)
-//</br>
-//![screen 3](/images/s3.png)
-//</br>
-//![screen 4](/images/s4.png)
-//</br>
-//![screen 5](/images/s5.png)
-//</br>
 <h3>Summary</h3>
 - Tolero is a tool for formatting social media posts that integrates opposing points of views.</br>
 - The user defines the subject or issue that they want to discuss.</br>

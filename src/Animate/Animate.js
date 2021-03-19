@@ -11,56 +11,54 @@ import './Animate.css'
 class Animate extends Component {
 
 
-  render(){
-    
-        const animation = {
-          loop: false,
-          autoplay: true, 
-          animationData: '',
-          rendererSettings: {
-            preserveAspectRatio: 'xMidYMid slice'
-          }
-        };
-        const animationLanding = {
-          loop: true,
-          autoplay: true, 
-          animationData: tLanding,
-          rendererSettings: {
-            preserveAspectRatio: 'xMidYMid slice'
-          }
-        };
+  render() {
+
+    const animation = {
+      loop: false,
+      autoplay: true,
+      animationData: '',
+      rendererSettings: {
+        preserveAspectRatio: 'xMidYMid slice'
+      }
+    };
+    const animationLanding = {
+      loop: true,
+      autoplay: true,
+      animationData: tLanding,
+      rendererSettings: {
+        preserveAspectRatio: 'xMidYMid slice'
+      }
+    };
 
     let part = this.props.page;
-    
+
     // if (part === 0){
     //   animation.animationData = tLanding;
     // }
-    if (part === 1){
+    if (part === 1) {
       animation.animationData = tSeq1;
     }
-    if (part === 2){
+    if (part === 2) {
       animation.animationData = tSeq2;
     }
-    if (part === 3){
+    if (part === 3) {
       animation.animationData = tSeq3;
     }
-    if (part === 4){
+    if (part === 4) {
       animation.animationData = tSeq4;
     }
     // animation.animationData =
 
-    return(
+    return (
       <div>
-      <div className="lottie">
-        {this.props.page === 0 && <Lottie options={animationLanding}/> }
-        {this.props.page > 0 && this.props.page < 5 && <Lottie options={animation}
-          height={450}
-          width={450}
-          /> }
-        {/* {this.props.page === 5 && <Lottie options={animation}
-          height={450}
-          width={450}/> } */}
-      </div>
+        <div className="lottie">
+          {this.props.page === 0 && <Lottie options={animationLanding} />}
+          {this.props.page > 0 && this.props.page < 5 && <Lottie options={animation}
+            height={450}
+            width={450}
+          />}
+
+        </div>
       </div>
     )
   }

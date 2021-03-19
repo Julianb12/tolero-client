@@ -4,7 +4,7 @@ import './Log.css'
 
 
 export default class Log extends Component {
-  state = {posts : [] };
+  state = { posts: [] };
 
   //state for posts
   componentDidMount() {
@@ -12,21 +12,19 @@ export default class Log extends Component {
 
       .then(res => res.json())
       .then(posts => this.setState({ posts }))
-      // .then(posts => console.log(posts))
+
   }
 
 
   render() {
-    return(
+    return (
       <div className="page">
-        <div >
+        <div>
           {this.state.posts.map((post, index) => (
             <div className="post" key={index}>{post.content}</div>
           ))}
 
-          {/* {this.props.log.map(posts => (
-            <div key={posts.id}>{posts.log}</div>
-          ))} */}
+
         </div>
       </div>
     )

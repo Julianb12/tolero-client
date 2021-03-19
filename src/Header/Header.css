@@ -18,6 +18,7 @@ li{
 }
 
 .home-button{
+  background-color: white;
   border: none;
   font-weight: bold;
   font-family: 'Comfortaa';
@@ -31,7 +32,8 @@ li{
 
 .log-button{
   float: right;
-  color: grey;
+  background-color: white;
+  /* color: grey; */
   /* display: block; */
   padding-bottom: 0px;
   padding-top: 8px;

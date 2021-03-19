@@ -13,8 +13,9 @@
   padding-right: 30px;
   padding-top: 7px;
   padding-bottom: 7px;
-  /* align-content: inherit; */
-  justify-content: left;
+  align-content: inherit;
+  /* justify-content: left; */
   margin-bottom: 10px;
+  
   
 }

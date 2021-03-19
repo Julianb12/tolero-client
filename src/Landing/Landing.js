@@ -17,13 +17,11 @@ class Landing extends Component {
     };
     return (
       <div>
-        {/* <h4 className="first-description">
-        Tolero is a simple tool for avoiding polarizing posts by integrating instead of discriminating.
-        </h4> */}
+
         <div className="grey-body">
           <br />
           <p>
-            * Social media grapples with real challenges of divisiveness,
+            Social media grapples with real challenges of divisiveness,
             misunderstanding and groupthink.
             <br />
             <br />

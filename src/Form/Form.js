@@ -9,14 +9,14 @@ class Form extends Component {
     return (
       <div className="all-things">
         <div className="form">
-          <Info page={this.props.page}/>
+          {/* <Info page={this.props.page}/> */}
           <form onSubmit={this.props.handleSubmit}>
             <div>
               <label htmlFor="issue">
                 {/* Subject */}
               </label>
               <textarea
-                placeholder="  Subject"
+                placeholder="   Subject"
                 className="text-input"
                 maxLength="24"
                 name="subjectField" 

@@ -9,11 +9,8 @@ class Header extends Component {
         <li>
           <button className="home-button" onClick={this.props.tolero}>Tolero</button>
         </li>
-        {/* <li>
-          <a href="#news">Create</a>
-        </li> */}
         <li>
-        <button className="log-button" onClick={this.props.log}>log</button>
+          <button className="log-button" onClick={this.props.log}>log</button>
         </li>
       </ul>
     );

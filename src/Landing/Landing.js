@@ -23,7 +23,7 @@ class Landing extends Component {
         <div className="grey-body">
           <br />
           <p>
-            **TEST** Social media grapples with real challenges of divisiveness,
+            * Social media grapples with real challenges of divisiveness,
             misunderstanding and groupthink.
             <br />
             <br />
